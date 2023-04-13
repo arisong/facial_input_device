@@ -14,7 +14,7 @@ Note that the UX is rather clunky now.
 
 # Possible future additions
 1. ~~Add speech transcription (so we can do away with the keyboard too)~~ DONE
-2. Add voice commands e.g. to open Chrome.
+2. ~~Add voice commands e.g. to open Chrome.~~ SEE https://support.microsoft.com/en-us/windows/windows-speech-recognition-commands-9d25ef36-994d-f367-a81a-a326160128c7
 3. Use eye gaze to point the mouse cursor instead.
 4. Improve UX.
 
