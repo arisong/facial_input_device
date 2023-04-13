@@ -1,6 +1,6 @@
 # Introduction
 Initially, I wanted to do something that we saw in *the* scene in 'Minority Report', but it did not seem practical because there was so much arm movements. It looked exhausting. In the end, I did this, which replaces major (not all) mouse functions with facial movements, so that we can, for example, browse the web just by using our face. The script reads your facial movements via your camera and imitate mouse actions.<br>
-Transcription has also been added, so that there is no need for a keyboard to type.<br>
+Transcription has also been added, so that there is no need for a keyboard to type words.<br>
 Note that the UX is rather clunky now.
 
 | Movements     | Actions       |
