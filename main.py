@@ -2,6 +2,20 @@ import cv2
 import mediapipe as mp
 import pyautogui
 import numpy as np
+# import pyautogui
+# import speech_recognition as sr # debug:https://github.com/Uberi/speech_recognition/issues/294 (same for pyaudio)
+from transcribe import transcribe
+
+# def transcribe():
+#     r = sr.Recognizer()
+#     mic = sr.Microphone()
+#     with mic as source:
+#         r.adjust_for_ambient_noise(source)
+#         audio = r.listen(source)
+#         transcription = r.recognize_google(audio)
+#         print(transcription)
+#     return transcription
+
 
 cam = cv2.VideoCapture(0)
 face_mesh = mp.solutions.face_mesh.FaceMesh(refine_landmarks=True,
@@ -37,7 +51,7 @@ while cam.isOpened():
         if (right[0].y - right[1].y) < 0.011:
             pyautogui.click(button='right')
             pyautogui.sleep(0.5)
-        
+
     # head angle for scrolling
     img_h, img_w, img_c = frame.shape
     face_3d = []
@@ -113,12 +127,12 @@ while cam.isOpened():
             else:
                 text = "Neutral"
         else:
-            if y < -10:
-                text = "Scrolling Left"
-                pyautogui.hscroll(20)
-            elif y > 10:
-                text = "Scrolling Right"
-                pyautogui.hscroll(-20)
+            if y < -10: # face left
+                text = "Nil"
+            elif y > 10: # face right
+                text = "Transcribing"
+                transcription = transcribe()
+                pyautogui.write(transcription)
             elif x < -10:
                 text = "Scrolling Down"
                 pyautogui.scroll(-20)
